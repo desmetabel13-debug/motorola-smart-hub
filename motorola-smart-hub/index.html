@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1b">
+  <title>Motorola Smart Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">MOTOROLA <span>SMART HUB</span></div>
+    <div class="status">● SYSTEEM ONLINE</div>
+  </header>
+
+  <main>
+    <section class="clock panel">
+      <div class="label">GOEDEMORGEN</div>
+      <div id="clock">00:00:00</div>
+      <div id="date">Laden...</div>
+    </section>
+
+   
+<section class="weather panel">
+  <div class="label">WEERSTATION</div>
+
+  <div class="weather-icon" id="weatherIcon">🌤️</div>
+  <div class="temperature" id="temperature">--°C</div>
+  <div id="weatherDescription">Nog geen weergegevens</div>
+
+  <div class="city-picker">
+    <input
+      type="text"
+      id="cityInput"
+      placeholder="Typ een stad..."
+      value="Antwerpen"
+    >
+    <button id="searchWeather">ZOEK</button>
+  </div>
+
+  <div id="cityName">Geen stad geselecteerd</div>
+
+  <div class="weather-details">
+    <div>
+      <span>GEVOELD</span>
+      <strong id="feelsLike">--°C</strong>
+    </div>
+    <div>
+      <span>WIND</span>
+      <strong id="windSpeed">-- km/u</strong>
+    </div>
+    <div>
+      <span>VOCHTIGHEID</span>
+      <strong id="humidity">--%</strong>
+    </div>
+  </div>
+
+  <div id="forecast"></div>
+  <p id="weatherStatus">Voer een stad in.</p>
+</section>
+
+
+    
+<section class="radio panel">
+  <div class="label">BELGIAN RADIO NETWORK</div>
+
+  <div class="radio-icon">📻</div>
+  <h2 id="stationTitle">Motorola Radio</h2>
+  <p id="radioStatus">Selecteer een Belgische zender</p>
+
+  <select id="station">
+    <option value="radio1">VRT Radio 1</option>
+    <option value="radio2">Radio 2 Antwerpen</option>
+    <option value="stubru">Studio Brussel</option>
+    <option value="mnm">MNM</option>
+    <option value="klara">Klara</option>
+    <option value="qmusic">Qmusic</option>
+    <option value="joe">JOE</option>
+    <option value="nostalgie">Nostalgie</option>
+  </select>
+
+  <audio id="audio" preload="none"></audio>
+
+  <div class="radio-controls">
+    <button id="playButton">▶ PLAY</button>
+    <button id="stopButton" class="secondary">■ STOP</button>
+    <button id="favoriteButton" class="secondary">☆ FAVORIET</button>
+  </div>
+
+  <div class="volume-control">
+    <label for="volume">VOLUME</label>
+    <input id="volume" type="range" min="0" max="100" value="70">
+    <span id="volumeValue">70%</span>
+  </div>
+
+  <div id="favoriteStatus">Nog geen favoriete zender</div>
+</section>
+
+
+    <section class="tools panel">
+      <div class="label">SNELLE FUNCTIES</div>
+      <div class="tool-grid">
+        <button onclick="showTool('Timer')">⏱️ Timer</button>
+        <button onclick="showTool('Kalender')">📅 Kalender</button>
+        <button onclick="showTool('Notities')">📝 Notities</button>
+        <button onclick="showTool('Instellingen')">⚙️ Instellingen</button>
+      </div>
+      <p id="toolStatus">Selecteer een functie</p>
+    </section>
+
+<section id="utilityPanel" class="panel utility-panel" hidden>
+  <div class="label">MOTOROLA SMART TOOLS</div>
+
+  <div class="utility-header">
+    <h2 id="utilityTitle">Tools</h2>
+    <button id="closeUtility" class="secondary">✕ SLUITEN</button>
+  </div>
+
+  <div id="utilityContent"></div>
+</section>
+
+  </main>
+
+  <footer>MOTOROLA SMART HUB · VERSION 1.0</footer>
+  <script src="script.js"></script>
+</body>
+</html>

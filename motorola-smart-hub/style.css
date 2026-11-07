@@ -1,0 +1,283 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #080d1b;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 10px;
+}
+
+.logo {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #36d9ff;
+}
+
+.status, .muted {
+  color: #8fa4bd;
+  font-size: 12px;
+}
+
+.status {
+  color: #38e6ae;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  max-width: 950px;
+  margin: auto;
+}
+
+.panel {
+  background: linear-gradient(145deg, #17243c, #10182b);
+  border: 1px solid #263b59;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 8px 25px #0005;
+}
+
+.label {
+  color: #36d9ff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+#clock {
+  font-size: clamp(38px, 9vw, 65px);
+  font-weight: bold;
+  letter-spacing: -2px;
+}
+
+#date {
+  color: #a9bad0;
+  margin-top: 8px;
+}
+
+.weather-icon, .radio-icon {
+  font-size: 45px;
+}
+
+.temperature {
+  font-size: 42px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.radio, .tools {
+  grid-column: span 2;
+}
+
+.radio h2 {
+  margin: 8px 0;
+}
+
+select, button {
+  border: 1px solid #345577;
+  border-radius: 10px;
+  padding: 13px;
+  background: #0b1528;
+  color: white;
+  font-size: 14px;
+  margin: 5px 3px 5px 0;
+}
+
+select {
+  width: 100%;
+}
+
+button {
+  background: #087eae;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: #293a53;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.tool-grid button {
+  min-height: 55px;
+}
+
+#toolStatus {
+  color: #a9bad0;
+}
+
+footer {
+  text-align: center;
+  color: #526780;
+  font-size: 11px;
+  margin: 25px 0;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 12px;
+  }
+
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .radio, .tools {
+    grid-column: span 1;
+  }
+}
+
+.city-picker {
+  display: flex;
+  gap: 6px;
+  margin: 15px 0;
+}
+
+.city-picker input {
+  min-width: 0;
+  flex: 1;
+  background: #0b1528;
+  color: white;
+  border: 1px solid #345577;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 14px;
+}
+
+.weather-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.weather-details div {
+  background: #0b1528;
+  padding: 10px 5px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.weather-details span {
+  display: block;
+  font-size: 9px;
+  color: #8fa4bd;
+  margin-bottom: 7px;
+}
+
+.weather-details strong {
+  font-size: 14px;
+}
+
+#forecast {
+  margin-top: 15px;
+  color: #b8c9df;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+#weatherStatus {
+  color: #8fa4bd;
+  font-size: 11px;
+}
+
+.radio-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.radio-controls button {
+  flex: 1;
+  min-width: 90px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  color: #36d9ff;
+  font-size: 12px;
+}
+
+.volume-control input {
+  flex: 1;
+  min-width: 0;
+  accent-color: #36d9ff;
+}
+
+#volumeValue {
+  min-width: 35px;
+  color: white;
+}
+
+#favoriteStatus {
+  color: #a9bad0;
+  font-size: 12px;
+  margin-top: 16px;
+}
+
+/* FIX: MOTOROLA SMART HUB KALENDER */
+
+#utilityContent .calendar-grid {
+  display: grid !important;
+  grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+  gap: 6px;
+  width: 100%;
+  text-align: center;
+}
+
+#utilityContent .calendar-grid div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 2px;
+  background: #0b1528;
+  border: 1px solid #263b59;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+#utilityContent .calendar-grid .calendar-heading {
+  color: #36d9ff;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+}
+
+#utilityContent .calendar-grid .today {
+  background: #087eae;
+  border-color: #36d9ff;
+  color: white;
+  font-weight: bold;
+}
